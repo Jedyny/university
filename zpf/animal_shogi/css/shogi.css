@@ -1,0 +1,169 @@
+body {
+  background-color: #99CCFF;
+}
+
+#game_content {
+  background-image: url('/static/img/board.jpg');
+  height: 719px;
+  margin: 0px auto;
+  position: relative;
+  width: 539px;
+}
+
+#black_to_drop {
+  border-spacing: 0px;
+  left: 224px;
+  position: absolute;
+  top: 45px;
+}
+
+#board {
+  border-spacing: 0px;
+  left: 134px;
+  position: absolute;
+  top: 178px;
+}
+
+#white_to_drop {
+  border-spacing: 0px;
+  left: 44px;
+  position: absolute;
+  top: 585px;
+}
+
+.field {
+  /* debug */ 
+  /*background-image: url('/static/img/elephant.png'); */
+  /*border-color: red;
+  border-style: solid;
+  border-width: 1px; */
+  height: 87px;
+  width: 87px;
+}
+
+.reversed {
+  -ms-filter: "FlipV"; /* older IEs */
+  filter: FlipV; /* IE? */
+  -moz-transform: scaleY(-1); /* Firefox */
+  -webkit-transform: scaleY(-1); /* Chrome */
+  transform: scaleY(-1);
+}
+
+#black_avatar {
+  left: 37px;
+  position: absolute;
+  top: 23px;
+}
+
+#white_avatar {
+  left: 357px;
+  position: absolute;
+  top: 565px;
+}
+
+.desaturate {
+  -moz-filter: grayscale(100%); /* future versions of Firefox */
+  -webkit-filter: grayscale(1); /* older Chromes */
+  -webkit-filter: grayscale(100%); /* Chrome */
+  filter: gray; /* older IEs */
+  filter: grayscale(100%); 
+  filter: url('/static/img/shogi.svg#greyscale'); /* Firefox */
+}
+
+#black_chick_drop_x2 {
+  left: 284px;
+  position: absolute;
+  top: 105px;
+}
+
+#black_elephant_drop_x2 {
+  left: 376px;
+  position: absolute;
+  top: 105px;
+}
+
+#black_giraffe_drop_x2 {
+  left: 465px;
+  position: absolute;
+  top: 105px;
+}
+
+#white_chick_drop_x2 {
+  left: 101px;
+  position: absolute;
+  top: 644px;
+}
+
+#white_elephant_drop_x2 {
+  left: 193px;
+  position: absolute;
+  top: 644px;
+}
+
+#white_giraffe_drop_x2 {
+  left: 285px;
+  position: absolute;
+  top: 644px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#dialog {
+  background-color: #FAA460;
+  -moz-border-radius: 60px; /* older Firefoxes */
+  -webkit-border-radius: 60px; /* older Chromes */
+  border-radius: 60px;
+  border: 8px solid #A0522D;
+  height: 258px;
+  left: 15px;
+  position: absolute;
+  text-align: center;
+  top: 168px;
+  width: 494px;
+  z-index: 200;
+}
+
+#new_game {
+  background-color: #f5deb3;
+  -moz-border-radius: 45px; /* older Firefoxes */
+  -webkit-border-radius: 45px; /* older Chromes */
+  border-radius: 45px;
+  border: 8px solid #A0522D;
+  font-size: 40px;
+  height: 100px;
+  left: 67px;
+  position: absolute;
+  text-align: center;
+  top: 125px;
+  width: 350px;
+  z-index: 300;
+}
+
+#new_game:hover {
+  background-color: #FFDAB9;
+  font-weight: bold;
+}
+
+#new_game_info {
+  font-size: 42px;
+  left: 10px;
+  position: absolute;
+  top: 40px;
+}
+
+#simba_wins {
+  font-size: 50px;
+  position: absolute;
+  left: 120px;
+  top: 30px;
+}
+
+#scar_wins {
+  font-size: 50px;
+  left: 140px;
+  position: absolute;
+  top: 30px;
+}
+

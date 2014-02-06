@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Animal Shogi</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/shogi.css" />
+    <!-- Needed by threepenny-gui --> 
+    <script src="driver/threepenny-gui.js"></script>
+    <!-- End --> 
+    <script>
+      function allowDragInFirefox() {
+        var fields = document.getElementsByClassName('field');
+        for (var i = 0; i < fields.length; ++i) {
+          fields[i].addEventListener('dragstart', function(e) {
+            e.dataTransfer.setData('text/plain', '');
+          }, false);
+        }
+      }
+    </script> 
+  </head>
+  <body onload="allowDragInFirefox();">
+    <div id="game_content">
+      <div id="dialog"> 
+        <span id="new_game_info">Welcome to Animal Shogi!</span>
+        <span id="simba_wins" class="hidden">Simba wins!</span>
+        <span id="scar_wins" class="hidden">Scar wins!</span> 
+        <button id="new_game">New Game</button>        
+      </div> 
+      <img id="black_avatar" 
+        class="desaturate" 
+        draggable="false"
+        src="/static/img/scar.jpg" />
+      <table id="black_to_drop">
+        <tr>
+          <td id="black_chick_drop" class="field reversed" />
+          <td id="black_elephant_drop" class="field reversed" />
+          <td id="black_giraffe_drop" class="field reversed" />
+        </tr>
+      </table>
+      <img id="black_chick_drop_x2" 
+        class="hidden" 
+        draggable="false"
+        src="/static/img/x2.png" />
+      <img id="black_elephant_drop_x2"
+        class="hidden" 
+        draggable="false"        
+        src="/static/img/x2.png" />
+      <img id="black_giraffe_drop_x2" 
+        class="hidden"
+        draggable="false"
+        src="/static/img/x2.png" />
+      <table id="board">
+        <tr>
+          <td id="field0" class="field" />
+          <td id="field1" class="field" />
+          <td id="field2" class="field" />
+        </tr><tr>
+          <td id="field3" class="field" />
+          <td id="field4" class="field" />
+          <td id="field5" class="field" />
+        </tr><tr>
+          <td id="field6" class="field" />
+          <td id="field7" class="field" />
+          <td id="field8" class="field" />
+        </tr><tr>
+          <td id="field9" class="field" />
+          <td id="field10" class="field" />
+          <td id="field11" class="field" />
+        </tr>
+      </table>
+      <table id="white_to_drop">
+        <tr>
+          <td id="white_chick_drop" class="field" />
+          <td id="white_elephant_drop" class="field" />
+          <td id="white_giraffe_drop" class="field" />
+        </tr>
+      </table>
+      <img id="white_chick_drop_x2" 
+        class="hidden"
+        draggable="false"
+        src="/static/img/x2.png" />
+      <img id="white_elephant_drop_x2" 
+        class="hidden"
+        draggable="false"
+        src="/static/img/x2.png" />
+      <img id="white_giraffe_drop_x2" 
+        class="hidden"
+        draggable="false"
+        src="/static/img/x2.png" />
+      <img id="white_avatar" 
+        class="desaturate" 
+        draggable="false"
+        src="/static/img/simba.jpg" />
+    </div>
+  </body>
+
+</html>

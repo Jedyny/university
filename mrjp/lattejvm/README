@@ -1,0 +1,40 @@
+1. Kompilacja i uruchomienice programu
+
+W katalogu głównym należy uruchomić następujące polecenia:
+
+make
+./latc <plik-wejściowy>
+
+Problemy z kompilacją programu mogą być spowodowane brakiem użytych bibliotek multimap lub parsec. W tym wypadku należy wywołać:
+
+cabal install multimap
+cabal install parsec
+
+2. Narzędzia i biblioteki
+
+Kompilator napisano w Haskellu. Zostały użyte następujące niestandardowe biblioteki:
+
+Parsec: Parsec pozwala na łączenie niewielkich, prostych parserów w celu tworzenia bardziej skomplikowanych. Cały kod pisany jest w Haskellu i nie wymaga preprocessingu, jak np. podczas użycia programu Happy.  Dokładną dokumentację Parsec można znaleźć tutaj: 
+
+http://hackage.haskell.org/package/parsec-3.1.3
+
+Multimap: efektywna implementacja multimapy. 
+
+3. Struktura katalogów
+
+src/ -> główny katalog ze źródłami programu, zawiera plik `Main`
+src/Latte -> pozostałe pliki projektu   
+
+Language: plik zawierający informacje o latte takie jak: sposób komentowania, dozwolone znaki identyfikatorów czy słowa kluczowe języka. Wykorzystywany na etapie parsowania.
+
+Lexer: lekser
+
+Parser: parser zbudowany na bazie kombinatorów dostarczonych przez bibliotekę Parsec. Wykorzystuje informacje zawarte w plikach Lexer i Language i buduje drzewo programu zgodne ze specyfikacją z ProgramTree.
+
+ProgramTree: struktury opisujące drzewo programu.
+
+Verifier: kod źródłowy tego modułu oparty jest o monadę stanu połączoną transformatorem z monadą pisarza. W stanie przechowywane są informacje niezbędne do weryfikacji np. drzewo klas, zadeklarowane funkcje czy zmienne. Pisarz rejestruje napotkane błędy, które następnie prezentowane są użytkownikowi.
+
+JvmTranslator: przy tłumaczeniu kodu zastosowano podobną technikę jak przy weryfikacji. W tym wypadku monada pisarza rejestruje kod llvm, który potem zapisywany jest do osobnego pliku. 
+
+Optimizer: ewentualne optymalizacje, obecnie tylko prosta eliminacja zbędnych if-else. 
